@@ -14,7 +14,7 @@ Requires:	scrollkeeper
 BuildRequires:	pkgconfig >= 0.12.0
 BuildRequires:	ORBit2-devel
 BuildRequires:	glib2-devel >= 2.0.1
-BuildRequires:	libgtkhtml-devel >= 1.99.7
+BuildRequires:	libgtkhtml-devel >= 1.99.8
 BuildRequires:	gnome-vfs2-devel >= 1.1
 BuildRequires:	libgnome-devel >= 1.112.1
 BuildRequires:	libgnomeui-devel >= 1.103.0
