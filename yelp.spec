@@ -5,32 +5,32 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.5.3
+Version:	2.5.4
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	8eab2ff695fed14dff1295b74dbaa23c
+# Source0-md5:	2bbb9448e828226a08133a0d2aa563fc
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.5.0
-BuildRequires:	ORBit2-devel >= 2.9.2
+BuildRequires:	GConf2-devel >= 2.5.1
+BuildRequires:	ORBit2-devel >= 2.9.7
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
 BuildRequires:	glib2-devel >= 2.3.1
 BuildRequires:	gnome-common
-BuildRequires:	gnome-vfs2-devel >= 2.5.3
+BuildRequires:	gnome-vfs2-devel >= 2.5.6
 BuildRequires:	libglade2-devel >= 2.3.1
-BuildRequires:	libgnomeui-devel >= 2.5.1
-BuildRequires:	libgtkhtml-devel >= 2.5.0
+BuildRequires:	libgnomeui-devel >= 2.5.4
+BuildRequires:	libgtkhtml-devel >= 2.5.3
 BuildRequires:	libtool
 BuildRequires:	libxslt-devel >= 1.0.32
 BuildRequires:	pkgconfig >= 0.15.0
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-vfs2 >= 2.5.3
-Requires:	gnome-mime-data >= 2.4.0
+Requires:	gnome-vfs2 >= 2.5.6
+Requires:	gnome-mime-data >= 2.4.1
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
