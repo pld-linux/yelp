@@ -25,6 +25,7 @@ BuildRequires:	libgnomeui-devel >= 2.0.5
 BuildRequires:	libgtkhtml-devel >= 2.1.2
 BuildRequires:	libxslt-devel >= 1.0.20
 BuildRequires:	pkgconfig >= 0.12.0
+BuildRequires:	rpm-build >= 4.1-7
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	scrollkeeper
@@ -70,7 +71,7 @@ install -d $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post 
-GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_bindir}/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null
+%gconf_schema_install
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
