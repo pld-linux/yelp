@@ -1,7 +1,7 @@
 diff -Nuard yelp-2.6.1.orig/po/en_CA.po yelp-2.6.1/po/en_CA.po
 --- yelp-2.6.1.orig/po/en_CA.po	2004-08-11 00:30:54.200606568 +0200
 +++ yelp-2.6.1/po/en_CA.po	2004-08-11 00:33:54.219239576 +0200
-@@ -659,5 +659,5 @@
+@@ -659,8 +659,8 @@
  msgstr "Get help with GNOME"
  
  #: yelp.desktop.in.h:2
@@ -9,6 +9,9 @@ diff -Nuard yelp-2.6.1.orig/po/en_CA.po yelp-2.6.1/po/en_CA.po
 -msgstr "Help"
 +msgid "GNOME Help"
 +msgstr "GNOME Help"
+ 
+ #~ msgid "â~@~X"
+ #~ msgstr "â~@~X"
 diff -Nuard yelp-2.6.1.orig/po/en_GB.po yelp-2.6.1/po/en_GB.po
 --- yelp-2.6.1.orig/po/en_GB.po	2004-08-11 00:30:54.200606568 +0200
 +++ yelp-2.6.1/po/en_GB.po	2004-08-11 00:33:14.558268960 +0200
