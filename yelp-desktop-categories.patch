@@ -1,35 +1,42 @@
 diff -Nuard yelp-2.6.1.orig/po/en_CA.po yelp-2.6.1/po/en_CA.po
 --- yelp-2.6.1.orig/po/en_CA.po	2004-08-11 00:30:54.200606568 +0200
 +++ yelp-2.6.1/po/en_CA.po	2004-08-11 00:33:54.219239576 +0200
-@@ -659,5 +659,5 @@
- msgstr "Get help with GNOME"
+@@ -659,7 +659,7 @@
  
- #: yelp.desktop.in.h:2
--msgid "Help"
+ #: yelp.desktop.in.in.h:2
+ msgid "Help"
 -msgstr "Help"
-+msgid "GNOME Help"
 +msgstr "GNOME Help"
+ 
+ #: src/yelp-man-pager.c:164
+ #, c-format
 diff -Nuard yelp-2.6.1.orig/po/en_GB.po yelp-2.6.1/po/en_GB.po
 --- yelp-2.6.1.orig/po/en_GB.po	2004-08-11 00:30:54.200606568 +0200
 +++ yelp-2.6.1/po/en_GB.po	2004-08-11 00:33:14.558268960 +0200
-@@ -663,4 +663,4 @@
+@@ -663,7 +663,7 @@
  
- #: yelp.desktop.in.h:2
+ #: yelp.desktop.in.in.h:2
  msgid "Help"
 -msgstr "Help"
 +msgstr "GNOME Help"
+ 
+ #: src/yelp-man-pager.c:164
+ #, c-format
 diff -Nuard yelp-2.6.1.orig/po/pl.po yelp-2.6.1/po/pl.po
 --- yelp-2.6.1.orig/po/pl.po	2004-08-11 00:30:54.208605352 +0200
 +++ yelp-2.6.1/po/pl.po	2004-08-11 00:32:44.458844768 +0200
-@@ -663,4 +663,4 @@
+@@ -663,7 +663,7 @@
  
- #: yelp.desktop.in.h:2
+ #: yelp.desktop.in.in.h:2
  msgid "Help"
 -msgstr "Pomoc"
 +msgstr "Pomoc GNOME"
-diff -Nuard yelp-2.6.1.orig/yelp.desktop.in yelp-2.6.1/yelp.desktop.in
---- yelp-2.6.1.orig/yelp.desktop.in	2004-08-11 00:30:54.093622832 +0200
-+++ yelp-2.6.1/yelp.desktop.in	2004-08-11 00:31:10.797083520 +0200
+ 
+ #: src/yelp-man-pager.c:164
+ #, c-format
+diff -Nuard yelp-2.6.1.orig/yelp.desktop.in.in yelp-2.6.1/yelp.desktop.in.in
+--- yelp-2.6.1.orig/yelp.desktop.in.in	2004-08-11 00:30:54.093622832 +0200
++++ yelp-2.6.1/yelp.desktop.in.in	2004-08-11 00:31:10.797083520 +0200
 @@ -7,7 +7,7 @@
  StartupNotify=true
  Terminal=false
