@@ -5,33 +5,35 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.4.2
+Version:	2.6.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	ee89f4d0886f7c3be1b9f6894a57ec1b
-Patch0:		%{name}-pixmapsdir.patch
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	50c7684b0239f3841e022603a15e4bfa
+Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.4.0
-BuildRequires:	ORBit2-devel >= 2.8.0
+BuildRequires:	GConf2-devel >= 2.6.0
+BuildRequires:	ORBit2-devel >= 1:2.10.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
-BuildRequires:	glib2-devel >= 2.2.3
+BuildRequires:	glib2-devel >= 1:2.4.0
 BuildRequires:	gnome-common
-BuildRequires:	gnome-vfs2-devel >= 2.4.0
-BuildRequires:	libglade2-devel >= 2.0.1
-BuildRequires:	libgnomeui-devel >= 2.4.0
-BuildRequires:	libgtkhtml-devel >= 2.4.0
+BuildRequires:	gnome-vfs2-devel >= 2.6.0
+BuildRequires:	libglade2-devel >= 1:2.3.6
+BuildRequires:	libgnomeui-devel >= 2.6.0
+BuildRequires:	libgtkhtml-devel >= 2.6.0
 BuildRequires:	libtool
-BuildRequires:	libxslt-devel >= 1.0.32
+BuildRequires:	libxml2-devel >= 2.6.5
+BuildRequires:	libxslt-devel >= 1.1.4
 BuildRequires:	pkgconfig >= 0.15.0
+BuildRequires:	popt-devel
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-vfs2 >= 2.4.0
-Requires:	gnome-mime-data >= 2.4.0
+Requires:	gnome-mime-data >= 2.4.1
+Requires:	gnome-vfs2 >= 2.6.0
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,6 +49,8 @@ narzêdziu.
 %prep
 %setup  -q
 %patch0 -p1
+
+mv po/{no,nb}.po
 
 %build
 %{__libtoolize}
@@ -76,9 +80,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_libdir}/bonobo/servers/*
-%attr(755,root,root) %{_libdir}/%{name}-db2html
-%attr(755,root,root) %{_libdir}/%{name}-info2html
-%attr(755,root,root) %{_libdir}/%{name}-man2html
 %{_datadir}/sgml/docbook/%{name}
-%{_pixmapsdir}/%{name}
 %{_desktopdir}/*
