@@ -10,6 +10,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
+# Source0-md5:	52d3a0dfac202ecb364946d358b3766a
 Patch0:		%{name}-pixmapsdir.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.1.90
