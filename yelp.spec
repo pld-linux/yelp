@@ -1,25 +1,29 @@
+# TODO:
+# move stylesheets to /usr/share/sgml
+# use more generic stylesheet location
+# remove docbook dtds and stylesheets from package and use system xml catalog
 Summary:	A system documentation reader from the Gnome project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	0.9
-Release:	1
+Version:	1.0
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-pixmapsdir.patch
-Patch1:		%{name}-pld.patch
+#Patch1:		%{name}-pld.patch
 URL:		http://www.gnome.org/
 Requires:	docbook-style-xsl = 1.50.0-1
 Requires:	scrollkeeper
 BuildRequires:	pkgconfig >= 0.12.0
-BuildRequires:	ORBit2-devel
-BuildRequires:	glib2-devel >= 2.0.1
-BuildRequires:	libgtkhtml-devel >= 1.99.8
-BuildRequires:	gnome-vfs2-devel >= 1.1
-BuildRequires:	libgnome-devel >= 1.112.1
-BuildRequires:	libgnomeui-devel >= 1.103.0
+BuildRequires:	ORBit2-devel >= 2.4.0
+BuildRequires:	glib2-devel >= 2.0.3
+BuildRequires:	libgtkhtml-devel >= 2.0.0
+BuildRequires:	gnome-vfs2-devel >= 2.0.0
+BuildRequires:	libgnome-devel >= 2.0.1
+BuildRequires:	libgnomeui-devel >= 2.0.1
 BuildRequires:	libxslt-devel >= 1.0.15
-BuildRequires:	GConf2-devel
+BuildRequires:	GConf2-devel >= 1.2.0
 BuildRequires:	bzip2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,7 +42,7 @@ narzêdziu.
 %prep
 %setup  -q 
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 
 %build
 %{__aclocal} -I %{_aclocaldir}/gnome2-macros
