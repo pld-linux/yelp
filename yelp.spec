@@ -30,6 +30,7 @@ BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-vfs2 >= 2.2.0
+Requires:	gnome-mime-data
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
