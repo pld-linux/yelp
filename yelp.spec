@@ -25,13 +25,15 @@ BuildRequires:	libglade2-devel >= 2.3.2
 BuildRequires:	libgnomeui-devel >= 2.5.4
 BuildRequires:	libgtkhtml-devel >= 2.5.6
 BuildRequires:	libtool
+BuildRequires:	libxml2-devel >= 2.6.5
 BuildRequires:	libxslt-devel >= 1.1.4
 BuildRequires:	pkgconfig >= 0.15.0
+BuildRequires:	popt-devel
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-vfs2 >= 2.5.90
 Requires:	gnome-mime-data >= 2.4.1
+Requires:	gnome-vfs2 >= 2.5.90
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
