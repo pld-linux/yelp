@@ -6,14 +6,14 @@ Summary:	A system documentation reader from the Gnome project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	1.0.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/2.0.1/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-pixmapsdir.patch
 #Patch1:		%{name}-pld.patch
 URL:		http://www.gnome.org/
-Requires:	docbook-style-xsl = 1.54.1-2
+Requires:	docbook-style-xsl = 1.55.0
 Requires:	scrollkeeper
 BuildRequires:	pkgconfig >= 0.12.0
 BuildRequires:	ORBit2-devel >= 2.4.3
