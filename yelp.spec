@@ -27,7 +27,7 @@ BuildRequires:	libgtkhtml-devel >= 2.6.1
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.9
 BuildRequires:	libxslt-devel >= 1.1.5
-BuildRequires:	pkgconfig >= 0.15.0
+BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	popt-devel
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
