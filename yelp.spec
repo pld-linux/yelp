@@ -5,12 +5,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.5.90
+Version:	2.5.91
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	0097bb03652833fa0be35660afa4d258
+# Source0-md5:	fc6fd9b1ee77a1f353be528874a25a1b
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.5.90
@@ -18,7 +18,7 @@ BuildRequires:	ORBit2-devel >= 2.9.8
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
-BuildRequires:	glib2-devel >= 2.3.5
+BuildRequires:	glib2-devel >= 2.4.0
 BuildRequires:	gnome-common
 BuildRequires:	gnome-vfs2-devel >= 2.5.90
 BuildRequires:	libglade2-devel >= 2.3.2
