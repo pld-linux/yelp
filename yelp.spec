@@ -2,7 +2,7 @@
 # move stylesheets to /usr/share/sgml
 # use more generic stylesheet location
 # remove docbook dtds and stylesheets from package and use system xml catalog
-Summary:	A system documentation reader from the Gnome project
+Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.3.6
@@ -35,7 +35,7 @@ Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Yelp is the Gnome 2 help/documentation browser. It is designed to help
+Yelp is the GNOME 2 help/documentation browser. It is designed to help
 you browse all the documentation on your system in one central tool.
 
 %description -l pl
