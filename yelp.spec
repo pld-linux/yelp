@@ -25,7 +25,7 @@ BuildRequires:	libgtkhtml-devel >= 2.0.2
 BuildRequires:	libxslt-devel >= 1.0.20
 BuildRequires:	pkgconfig >= 0.12.0
 Requires(post):	GConf2
-Requires:	docbook-style-xsl = 1.55.0
+Requires:	docbook-style-xsl >= 1.55.0
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
