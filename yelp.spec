@@ -5,7 +5,7 @@
 Summary:	A system documentation reader from the Gnome project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.1.4
+Version:	2.1.5
 Release:	1
 License:	GPL
 Group:		X11/Applications
@@ -13,13 +13,13 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.t
 Patch0:		%{name}-pixmapsdir.patch
 #Patch1:		%{name}-pld.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 1.2.1
+BuildRequires:	GConf2-devel >= 2.1.90
 BuildRequires:	ORBit2-devel >= 2.5.1
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
 BuildRequires:	glib2-devel >= 2.2.0
-BuildRequires:	gnome-vfs2-devel >= 2.1.6
+BuildRequires:	gnome-vfs2-devel >= 2.1.91
 BuildRequires:	libgnome-devel >= 2.1.1
 BuildRequires:	libgnomeui-devel >= 2.1.2
 BuildRequires:	libgtkhtml-devel >= 2.1.8
@@ -30,7 +30,7 @@ BuildRequires:	Xft-devel >= 2.1-2
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	scrollkeeper
-Requires:	gnome-vfs2 >= 2.1.6
+Requires:	gnome-vfs2 >= 2.1.91
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
