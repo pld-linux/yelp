@@ -5,14 +5,14 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.5.2.1
+Version:	2.5.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	2ba73d5cf746d76498618ada5c85854c
+# Source0-md5:	8eab2ff695fed14dff1295b74dbaa23c
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.4.0
+BuildRequires:	GConf2-devel >= 2.5.0
 BuildRequires:	ORBit2-devel >= 2.9.2
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -22,7 +22,7 @@ BuildRequires:	gnome-common
 BuildRequires:	gnome-vfs2-devel >= 2.5.3
 BuildRequires:	libglade2-devel >= 2.3.1
 BuildRequires:	libgnomeui-devel >= 2.5.1
-BuildRequires:	libgtkhtml-devel >= 2.4.0
+BuildRequires:	libgtkhtml-devel >= 2.5.0
 BuildRequires:	libtool
 BuildRequires:	libxslt-devel >= 1.0.32
 BuildRequires:	pkgconfig >= 0.15.0
@@ -74,8 +74,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_libdir}/bonobo/servers/*
-%attr(755,root,root) %{_libdir}/%{name}-db2html
-%attr(755,root,root) %{_libdir}/%{name}-info2html
-%attr(755,root,root) %{_libdir}/%{name}-man2html
 %{_datadir}/sgml/docbook/%{name}
 %{_desktopdir}/*
