@@ -47,7 +47,7 @@ przegl±daniu ca³ej dokumentacji systemu w jednym, centralnym
 narzêdziu.
 
 %prep
-%setup  -q
+%setup -q
 %patch0 -p1
 
 %build
