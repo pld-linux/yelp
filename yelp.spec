@@ -34,7 +34,7 @@ BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	zlib-devel
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-doc-utils >= 1.3
+Requires:	gnome-doc-utils >= 0.1.3
 Requires:	gnome-mime-data >= 2.4.1
 Requires:	gnome-vfs2 >= 2.10.0-2
 Requires:	scrollkeeper
