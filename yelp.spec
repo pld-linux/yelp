@@ -5,14 +5,13 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.6.1
-Release:	3
+Version:	2.6.2
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	965ab4cb4f40c76554ce850d63281f06
-Patch0:		%{name}-locale-names.patch
-Patch1:		%{name}-desktop-categories.patch
+# Source0-md5:	d5530d4cb207bba0f019277cd8a4c0d8
+Patch0:		%{name}-desktop-categories.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.6.1
 BuildRequires:	ORBit2-devel >= 1:2.10.0
@@ -50,9 +49,6 @@ narzêdziu.
 %prep
 %setup  -q
 %patch0 -p1
-%patch1 -p1
-
-mv po/{no,nb}.po
 
 %build
 %{__libtoolize}
@@ -67,6 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --with-gnome --all-name
 
