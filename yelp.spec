@@ -19,6 +19,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
 BuildRequires:	glib2-devel >= 2.2.3
+BuildRequires:	gnome-common
 BuildRequires:	gnome-vfs2-devel >= 2.4.0
 BuildRequires:	libgnome-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
