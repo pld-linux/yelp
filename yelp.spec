@@ -1,7 +1,7 @@
 Summary:	A system documentation reader from the Gnome project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	0.8
+Version:	0.9
 Release:	1
 License:	GPL
 Group:		X11/Applications
