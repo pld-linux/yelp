@@ -6,7 +6,7 @@ Summary:	A system documentation reader from the Gnome project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.1.2
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
@@ -25,15 +25,12 @@ BuildRequires:	libgnomeui-devel >= 2.0.5
 BuildRequires:	libgtkhtml-devel >= 2.1.2
 BuildRequires:	libxslt-devel >= 1.0.20
 BuildRequires:	pkgconfig >= 0.12.0
-BuildRequires:	rpm-build >= 4.1-7
+BuildRequires:	rpm-build >= 4.1-8.2
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	scrollkeeper
 Requires:	gnome-vfs2 >= 2.0.4-3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_sysconfdir	/etc/X11/GNOME2
 
 %description
 Yelp is the Gnome 2 help/documentation browser. It is designed to help
