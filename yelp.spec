@@ -6,7 +6,7 @@ Summary:	A system documentation reader from the Gnome project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.3.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
@@ -25,7 +25,6 @@ BuildRequires:	libgtkhtml-devel >= 2.2.0
 BuildRequires:	libxslt-devel >= 1.0.24
 BuildRequires:	pkgconfig >= 0.12.0
 BuildRequires:	rpm-build >= 4.1-10
-BuildRequires:	Xft-devel >= 2.1-2
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	scrollkeeper
