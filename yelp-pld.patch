@@ -1,0 +1,23 @@
+--- yelp-0.8/stylesheets/yelp-customization.xsl.wiget2	Wed May 22 10:24:13 2002
++++ yelp-0.8/stylesheets/yelp-customization.xsl	Wed May 22 10:33:17 2002
+@@ -2,7 +2,7 @@
+ <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 version='1.0'>
+ 
+-<xsl:import href="http://docbook.sourceforge.net/release/xsl/1.48/html/docbook.xsl"/>
++<xsl:import href="/usr/share/sgml/docbook/xsl-styleshhets-1.50.0/html/docbook.xsl"/>
+ <xsl:include href="yelp-custom.xsl"/>
+ 
+ <xsl:param name="gdb_docname" />
+@@ -13,9 +13,9 @@
+ 
+ <xsl:param name="gdb_multichunk" select="0" />
+ 
+-<xsl:param name="gdb_stylesheet_path" select="'/opt/gnome-2.0/share/xml/docbook/docbook-xsl-1.48.0/'" />
++<xsl:param name="gdb_stylesheet_path" select="'/usr/share/sgml/docbook/xsl-stylesheets-1.50.0/'" />
+ 
+-<xsl:output encoding="ISO-8859-1" />
++<xsl:output encoding="UTF-8" />
+ 
+ <!-- direct parametrisation -->
+ <xsl:param name="admon.style"><xsl:text>margin-left: 0</xsl:text></xsl:param>
