@@ -6,7 +6,7 @@ Summary:	A system documentation reader from the Gnome project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.1.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
@@ -33,6 +33,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME2
+%define		_serverdir	/usr/lib/bonobo/servers
 
 %description
 Yelp is the Gnome 2 help/documentation browser. It is designed to help
@@ -59,7 +60,9 @@ narzêdziu.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	    DESTDIR=$RPM_BUILD_ROOT \
+	    serverdir=%{_serverdir}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -76,6 +79,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_bindir}/g
 %{_datadir}/%{name}
 %{_datadir}/pixmaps/%{name}
 %{_datadir}/applications/*
-%{_libdir}/bonobo/servers/*
+%{_serverdir}/*
 %attr(755,root,root) %{_libdir}/%{name}-db2html
 %{_datadir}/sgml/docbook/%{name}
