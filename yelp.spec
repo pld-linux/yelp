@@ -5,32 +5,32 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.3.6
+Version:	2.3.90
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	aab67ada710389166f6df121bab57881
+# Source0-md5:	0a55a3c7d41bc54e863e04887ad3f71c
 Patch0:		%{name}-pixmapsdir.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.1.90
-BuildRequires:	ORBit2-devel >= 2.7.5-1
+BuildRequires:	GConf2-devel >= 2.3.3
+BuildRequires:	ORBit2-devel >= 2.8.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
-BuildRequires:	glib2-devel >= 2.2.0
-BuildRequires:	gnome-vfs2-devel >= 2.2.0
-BuildRequires:	libgnome-devel >= 2.1.90
-BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
-BuildRequires:	libgtkhtml-devel >= 2.2.0
+BuildRequires:	glib2-devel >= 2.2.3
+BuildRequires:	gnome-vfs2-devel >= 2.3.8
+BuildRequires:	libgnome-devel >= 2.4.0
+BuildRequires:	libgnomeui-devel >= 2.3.7
+BuildRequires:	libgtkhtml-devel >= 2.3.5
 BuildRequires:	libtool
-BuildRequires:	libxslt-devel >= 1.0.24
-BuildRequires:	pkgconfig >= 0.12.0
+BuildRequires:	libxslt-devel >= 1.0.32
+BuildRequires:	pkgconfig >= 0.15.0
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-vfs2 >= 2.2.0
-Requires:	gnome-mime-data
+Requires:	gnome-vfs2 >= 2.3.8
+Requires:	gnome-mime-data >= 2.3.2
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
