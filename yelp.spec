@@ -34,7 +34,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME2
-%define		_serverdir	/usr/lib/bonobo/servers
+%define		_bonobo_server_dir	/usr/lib/bonobo/servers
 
 %description
 Yelp is the Gnome 2 help/documentation browser. It is designed to help
@@ -63,7 +63,7 @@ install -d $RPM_BUILD_ROOT
 
 %{__make} install \
 	    DESTDIR=$RPM_BUILD_ROOT \
-	    serverdir=%{_serverdir}
+	    serverdir=%{_bonobo_server_dir}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -80,6 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_datadir}/pixmaps/%{name}
 %{_datadir}/applications/*
-%{_serverdir}/*
+%{_bonobo_server_dir}/*
 %attr(755,root,root) %{_libdir}/%{name}-db2html
 %{_datadir}/sgml/docbook/%{name}
