@@ -22,7 +22,7 @@ BuildRequires:	glib2-devel >= 2.0.6
 BuildRequires:	gnome-vfs2-devel >= 2.0.3
 BuildRequires:	libgnome-devel >= 2.0.4
 BuildRequires:	libgnomeui-devel >= 2.0.5
-BuildRequires:	libgtkhtml-devel >= 2.0.2
+BuildRequires:	libgtkhtml-devel >= 2.1.1
 BuildRequires:	libxslt-devel >= 1.0.20
 BuildRequires:	pkgconfig >= 0.12.0
 Requires(post):	GConf2
