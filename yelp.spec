@@ -5,8 +5,8 @@
 Summary:	A system documentation reader from the Gnome project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	1.0.1
-Release:	0.1
+Version:	1.0.3
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
@@ -63,7 +63,7 @@ install -d $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post 
-GCONF_CONFIG_SOURCE="" %{_bindir}/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null
+GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_bindir}/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -73,4 +73,5 @@ GCONF_CONFIG_SOURCE="" %{_bindir}/gconftool-2 --makefile-install-rule %{_sysconf
 %{_datadir}/pixmaps/%{name}
 %{_datadir}/applications/*
 %{_libdir}/bonobo/servers/*
+%attr(755,root,root) %{_libdir}/%{name}-db2html
 %{_datadir}/sgml/docbook/%{name}
