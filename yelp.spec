@@ -73,8 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc README ChangeLog NEWS TODO AUTHORS
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{_datadir}/pixmaps/%{name}
-%{_datadir}/applications/*
 %{_libdir}/bonobo/servers/*
 %attr(755,root,root) %{_libdir}/%{name}-db2html
 %{_datadir}/sgml/docbook/%{name}
+%{_pixmapsdir}/%{name}
+%{_desktopdir}/*
