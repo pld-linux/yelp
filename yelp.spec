@@ -25,7 +25,7 @@ BuildRequires:	libglade2-devel >= 2.3.1
 BuildRequires:	libgnomeui-devel >= 2.5.4
 BuildRequires:	libgtkhtml-devel >= 2.5.3
 BuildRequires:	libtool
-BuildRequires:	libxslt-devel >= 1.0.32
+BuildRequires:	libxslt-devel >= 1.1.4
 BuildRequires:	pkgconfig >= 0.15.0
 BuildRequires:	rpm-build >= 4.1-10
 Requires(post):	GConf2
