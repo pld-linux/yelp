@@ -48,6 +48,7 @@ narzêdziu.
 #%patch1 -p1
 
 %build
+%{__libtoolize}
 %{__aclocal} -I %{_aclocaldir}/gnome2-macros
 %{__autoconf}
 %{__automake}
