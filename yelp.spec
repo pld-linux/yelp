@@ -43,7 +43,7 @@ przegl±daniu ca³ej dokumentacji systemu w jednym, centralnym
 narzêdziu.
 
 %prep
-%setup  -q 
+%setup  -q
 %patch0 -p1
 
 %build
@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post 
+%post
 %gconf_schema_install
 
 %files -f %{name}.lang
