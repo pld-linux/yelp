@@ -5,6 +5,7 @@
 %define libbonobo_version 1.110.0
 
 Summary:	A system documentation reader from the Gnome project
+Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	0.2
 Release:	2
@@ -17,12 +18,12 @@ Group(pt_BR):	X11/Aplicações
 Group(pt):	X11/Aplicações
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/yelp/%{name}-%{version}.tar.bz2
 Requires:	scrollkeeper
-Requires:	gtk2 >= %{gtk2_version}
+Requires:	gtk+2 >= %{gtk2_version}
 Requires:	gnome-vfs2 >= %{gnome_vfs2_version}
 Requires:	gtkhtml2 >= %{gtkhtml2_version}
 Requires:	libgnomeui >= %{libgnomeui_version}
 Requires:	libbonobo >= %{libbonobo_version}
-BuildRequires:	gtk2-devel >= %{gtk2_version}
+BuildRequires:	gtk+2-devel >= %{gtk2_version}
 BuildRequires:	gnome-vfs2-devel >= %{gnome_vfs2_version}
 BuildRequires:	gtkhtml2-devel >= %{gtkhtml2_version}
 BuildRequires:	libgnomeui-devel >= %{libgnomeui_version}
@@ -35,6 +36,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Yelp is the Gnome 2 help/documentation browser. It is designed to help
 you browse all the documentation on your system in one central tool.
+
+%description -l pl
+Yelp jest przegl±dark± pomocy i dokumentacji GNOME 2. Ma pomagaæ w
+przegl±daniu ca³ej dokumentacji systemu w jednym, centralnym
+narzêdziu.
 
 %prep
 %setup -q
