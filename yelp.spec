@@ -13,18 +13,21 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.1/%{name}-%{version}.t
 Patch0:		%{name}-pixmapsdir.patch
 #Patch1:		%{name}-pld.patch
 URL:		http://www.gnome.org/
-Requires:	docbook-style-xsl = 1.55.0
-Requires:	scrollkeeper
-BuildRequires:	pkgconfig >= 0.12.0
+BuildRequires:	GConf2-devel >= 1.2.1
 BuildRequires:	ORBit2-devel >= 2.4.3
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	bzip2-devel
 BuildRequires:	glib2-devel >= 2.0.6
-BuildRequires:	libgtkhtml-devel >= 2.0.2
 BuildRequires:	gnome-vfs2-devel >= 2.0.3
 BuildRequires:	libgnome-devel >= 2.0.4
 BuildRequires:	libgnomeui-devel >= 2.0.5
+BuildRequires:	libgtkhtml-devel >= 2.0.2
 BuildRequires:	libxslt-devel >= 1.0.20
-BuildRequires:	GConf2-devel >= 1.2.1
-BuildRequires:	bzip2-devel
+BuildRequires:	pkgconfig >= 0.12.0
+Requires(post):	GConf2
+Requires:	docbook-style-xsl = 1.55.0
+Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
