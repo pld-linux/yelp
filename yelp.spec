@@ -5,12 +5,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.10.0
+Version:	2.11.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	326f85c8c0fd944e782a37b0589036c5
+Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.11/%{name}-%{version}.tar.bz2
+# Source0-md5:	f133a46fb20eb4733e5d5078a7c93ece
 Patch0:		%{name}-desktop-categories.patch
 Patch1:		%{name}-MOZILLA_HOME.patch
 URL:		http://www.gnome.org/
