@@ -20,10 +20,10 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gnome-doc-utils >= 0.1.1
-BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
+BuildRequires:	gnome-doc-utils >= 0.3.1
+BuildRequires:	gnome-vfs2-devel >= 2.11.0
 BuildRequires:	libglade2-devel >= 1:2.5.1
-BuildRequires:	libgnomeui-devel >= 2.10.0-2
+BuildRequires:	libgnomeui-devel >= 2.11.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.18
 BuildRequires:	libxslt-devel >= 1.1.12
@@ -34,9 +34,9 @@ BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:	zlib-devel
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-doc-utils >= 0.1.3
+Requires:	gnome-doc-utils >= 0.3.1
 Requires:	gnome-mime-data >= 2.4.1
-Requires:	gnome-vfs2 >= 2.10.0-2
+Requires:	gnome-vfs2 >= 2.11.0
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
