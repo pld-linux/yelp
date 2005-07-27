@@ -2,11 +2,15 @@
 # move stylesheets to /usr/share/sgml
 # use more generic stylesheet location
 # remove docbook dtds and stylesheets from package and use system xml catalog
+
+# Conditinal build:
+%bcond_with     mozilla_firefox # build with mozilla-firefox-devel
+
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.11.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.11/%{name}-%{version}.tar.bz2
@@ -27,7 +31,11 @@ BuildRequires:	libgnomeui-devel >= 2.11.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.18
 BuildRequires:	libxslt-devel >= 1.1.12
-BuildRequires:	mozilla-devel
+%if %{with mozilla_firefox}
+BuildRequires:  mozilla-firefox-devel
+%else
+BuildRequires:  mozilla-devel >= 5:1.7
+%endif
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	popt-devel
 BuildRequires:	rpm-build >= 4.1-10
@@ -38,7 +46,15 @@ Requires:	gnome-doc-utils >= 0.3.1
 Requires:	gnome-mime-data >= 2.4.1
 Requires:	gnome-vfs2 >= 2.11.0
 Requires:	scrollkeeper
+%if %{with mozilla_firefox}
+%requires_eq    mozilla-firefox
+%else
+Requires:       mozilla-embedded = %(rpm -q --qf '%{EPOCH}:%{VERSION}' --whatprovides mozilla-embedded)
+%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# can be provided by mozilla or mozilla-embedded
+%define         _noautoreqdep   libgtkembedmoz.so libgtksuperwin.so libxpcom.so
 
 %description
 Yelp is the GNOME 2 help/documentation browser. It is designed to help
