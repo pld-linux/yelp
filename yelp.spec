@@ -1,4 +1,5 @@
 # TODO:
+# merge changes from head
 # move stylesheets to /usr/share/sgml
 # use more generic stylesheet location
 # remove docbook dtds and stylesheets from package and use system xml catalog
