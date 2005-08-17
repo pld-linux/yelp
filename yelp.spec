@@ -44,7 +44,6 @@ BuildRequires:	zlib-devel
 Requires(post):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-doc-utils >= 0.3.1
-Requires:	gnome-mime-data >= 2.4.1
 Requires:	gnome-vfs2 >= 2.11.0
 Requires:	scrollkeeper
 %if %{with mozilla_firefox}
