@@ -10,12 +10,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.11.1
-Release:	3
+Version:	2.11.92
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.11/%{name}-%{version}.tar.bz2
-# Source0-md5:	f133a46fb20eb4733e5d5078a7c93ece
+# Source0-md5:	0458ead502d20d69ec96397da792f285
 Patch0:		%{name}-desktop-categories.patch
 Patch1:		%{name}-MOZILLA_HOME.patch
 URL:		http://www.gnome.org/
@@ -39,9 +39,9 @@ BuildRequires:  mozilla-devel >= 5:1.7
 %endif
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	popt-devel
-BuildRequires:	rpm-build >= 4.1-10
+BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	zlib-devel
-Requires(post):	GConf2
+Requires(post,preun):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-doc-utils >= 0.3.1
 Requires:	gnome-vfs2 >= 2.11.0
@@ -92,14 +92,17 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%gconf_schema_install
+%gconf_schema_install yelp.schemas
+
+%preun
+%gconf_schema_uninstall yelp.schemas
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc README ChangeLog NEWS TODO AUTHORS
 %attr(755,root,root) %{_bindir}/*
-%{_sysconfdir}/gconf/schemas/*.schemas
 %{_datadir}/%{name}
-%{_libdir}/bonobo/servers/*
-%{_iconsdir}/hicolor/192x192/apps/yelp-icon-big.png
 %{_desktopdir}/*
+%{_iconsdir}/hicolor/192x192/apps/yelp-icon-big.png
+%{_libdir}/bonobo/servers/*
+%{_sysconfdir}/gconf/schemas/yelp.schemas
