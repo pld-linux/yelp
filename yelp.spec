@@ -5,7 +5,7 @@
 # remove docbook dtds and stylesheets from package and use system xml catalog
 
 # Conditinal build:
-%bcond_with     mozilla_firefox # build with mozilla-firefox-devel
+%bcond_with	mozilla_firefox	# build with mozilla-firefox-devel
 
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
@@ -34,9 +34,9 @@ BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.21
 BuildRequires:	libxslt-devel >= 1.1.5
 %if %{with mozilla_firefox}
-BuildRequires:  mozilla-firefox-devel
+BuildRequires:	mozilla-firefox-devel
 %else
-BuildRequires:  mozilla-devel >= 5:1.7
+BuildRequires:	mozilla-devel >= 5:1.7
 %endif
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	popt-devel
@@ -48,23 +48,23 @@ Requires:	gnome-doc-utils >= 0.4.0
 Requires:	gnome-vfs2 >= 2.12.0
 Requires:	scrollkeeper
 %if %{with mozilla_firefox}
-%requires_eq    mozilla-firefox
+%requires_eq	mozilla-firefox
 %else
-Requires:       mozilla-embedded = %(rpm -q --qf '%{EPOCH}:%{VERSION}' --whatprovides mozilla-embedded)
+Requires:	mozilla-embedded = %(rpm -q --qf '%{EPOCH}:%{VERSION}' --whatprovides mozilla-embedded)
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # can be provided by mozilla or mozilla-embedded
-%define         _noautoreqdep   libgtkembedmoz.so libgtksuperwin.so libxpcom.so
+%define		_noautoreqdep	libgtkembedmoz.so libgtksuperwin.so libxpcom.so
 
 %description
 Yelp is the GNOME 2 help/documentation browser. It is designed to help
 you browse all the documentation on your system in one central tool.
 
 %description -l pl
-Yelp jest przegl±dark± pomocy i dokumentacji GNOME 2. Ma pomagaæ w
-przegl±daniu ca³ej dokumentacji systemu w jednym, centralnym
-narzêdziu.
+Yelp jest przegl±dark± pomocy i dokumentacji GNOME 2. Ma umo¿liwiæ
+przegl±danie ca³ej dokumentacji systemu za pomoc± jednego, centralnrgo
+narzêdzia.
 
 %prep
 %setup -q
