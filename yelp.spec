@@ -1,5 +1,4 @@
 # TODO:
-# merge changes from head
 # move stylesheets to /usr/share/sgml
 # use more generic stylesheet location
 # remove docbook dtds and stylesheets from package and use system xml catalog
@@ -58,12 +57,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_noautoreqdep	libgtkembedmoz.so libgtksuperwin.so libxpcom.so
 
 %description
-Yelp is the GNOME 2 help/documentation browser. It is designed to help
+Yelp is the GNOME help/documentation browser. It is designed to help
 you browse all the documentation on your system in one central tool.
 
 %description -l pl
-Yelp jest przegl±dark± pomocy i dokumentacji GNOME 2. Ma umo¿liwiæ
-przegl±danie ca³ej dokumentacji systemu za pomoc± jednego, centralnrgo
+Yelp jest przegl±dark± pomocy i dokumentacji GNOME. Umo¿liwia
+przegl±danie ca³ej dokumentacji systemu za pomoc± jednego, centralnego
 narzêdzia.
 
 %prep
