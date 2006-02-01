@@ -16,6 +16,7 @@ Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.13/%{name}-%{version}.tar.bz2
 # Source0-md5:	5b588e1e21f2f5c1e0333c2a7405dea6
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-m4.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	ORBit2-devel >= 1:2.12.4
@@ -67,6 +68,7 @@ narzêdzia.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
