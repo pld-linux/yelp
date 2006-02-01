@@ -1,0 +1,16 @@
+diff -aurN yelp-2.13.4.orig/m4/gecko.m4 yelp-2.13.4/m4/gecko.m4
+--- yelp-2.13.4.orig/m4/gecko.m4	2006-01-15 19:48:46.000000000 +0100
++++ yelp-2.13.4/m4/gecko.m4	2006-02-01 18:58:35.741476000 +0100
+@@ -88,9 +88,9 @@
+ xulrunner) gecko_cv_gecko_flavour=toolkit ;;
+ esac
+ 
+-_GECKO_INCLUDE_ROOT="`$PKG_CONFIG --variable=includedir ${gecko_cv_gecko}-gtkmozembed`"
+-_GECKO_HOME="`$PKG_CONFIG --variable=libdir ${gecko_cv_gecko}-gtkmozembed`"
+-_GECKO_PREFIX="`$PKG_CONFIG --variable=prefix ${gecko_cv_gecko}-gtkmozembed`"
++_GECKO_INCLUDE_ROOT="`$PKG_CONFIG --variable=includedir ${gecko_cv_gecko}-xpcom`"
++_GECKO_HOME="`$PKG_CONFIG --variable=libdir ${gecko_cv_gecko}-xpcom`"
++_GECKO_PREFIX="`$PKG_CONFIG --variable=prefix ${gecko_cv_gecko}-xpcom`"
+ 
+ fi # if gecko_cv_have_gecko
+ 
