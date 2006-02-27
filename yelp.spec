@@ -5,20 +5,20 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.13.5
+Version:	2.13.6
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.13/%{name}-%{version}.tar.bz2
-# Source0-md5:	8db22c647577c6c3b5249ecc3cc9987a
+# Source0-md5:	a60684fad5f33f65cb4738f4743c9d92
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-m4.patch
-Patch2:		%{name}-xslt_location.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	ORBit2-devel >= 1:2.12.4
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	beagle-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	glib2-devel >= 1:2.8.1
 BuildRequires:	gnome-common >= 2.8.0
@@ -66,15 +66,13 @@ narzêdzia.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
-%configure \
-	--with-search=basic
+%configure
 %{__make}
 
 %install
@@ -102,7 +100,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_libdir}/bonobo/servers/*
 %{_datadir}/%{name}
-%{_datadir}/sgml/%{name}
 %{_desktopdir}/*
 %{_iconsdir}/hicolor/192x192/apps/yelp-icon-big.png
 %{_sysconfdir}/gconf/schemas/yelp.schemas
