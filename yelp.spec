@@ -6,7 +6,7 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.13.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.13/%{name}-%{version}.tar.bz2
@@ -18,7 +18,7 @@ BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	ORBit2-devel >= 1:2.12.4
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	beagle-devel
+#BuildRequires:	beagle-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	glib2-devel >= 1:2.8.1
 BuildRequires:	gnome-common >= 2.8.0
