@@ -5,12 +5,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.13.6
-Release:	2
+Version:	2.14.0
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.13/%{name}-%{version}.tar.bz2
-# Source0-md5:	a60684fad5f33f65cb4738f4743c9d92
+Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.14/%{name}-%{version}.tar.bz2
+# Source0-md5:	eef25315bfe8162dd7bcc2aabf31bcf8
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-m4.patch
 URL:		http://www.gnome.org/
@@ -18,6 +18,7 @@ BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	ORBit2-devel >= 1:2.12.4
 BuildRequires:	autoconf
 BuildRequires:	automake
+# disabled due poldek bug
 #BuildRequires:	beagle-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	glib2-devel >= 1:2.8.1
