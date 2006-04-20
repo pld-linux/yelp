@@ -10,13 +10,14 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.12.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.12/%{name}-%{version}.tar.bz2
 # Source0-md5:	e229529aa1dacfd269024511e2c12ad2
 Patch0:		%{name}-desktop-categories.patch
 Patch1:		%{name}-MOZILLA_HOME.patch
+Patch2:		%{name}-bs.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	ORBit2-devel >= 1:2.12.4
@@ -69,6 +70,7 @@ narzêdzia.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
