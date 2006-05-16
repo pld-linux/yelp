@@ -1,22 +1,18 @@
-# TODO:
-# move stylesheets to /usr/share/sgml
-# use more generic stylesheet location
-# remove docbook dtds and stylesheets from package and use system xml catalog
-
+#
 # Conditinal build:
-%bcond_with	mozilla_firefox	# build with mozilla-firefox-devel
-
+%bcond_with	mozilla_firefox		# build with mozilla-firefox
+#
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.12.2
+Version:	2.14.1
 Release:	2
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	e229529aa1dacfd269024511e2c12ad2
-Patch0:		%{name}-desktop-categories.patch
-Patch1:		%{name}-MOZILLA_HOME.patch
+Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.14/%{name}-%{version}.tar.bz2
+# Source0-md5:	3d569f8e9372bc88c7f9fca6a94388a9
+Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-m4.patch
 Patch2:		%{name}-bs.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.12.0
@@ -74,7 +70,7 @@ narzêdzia.
 
 %build
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
 %configure
@@ -103,8 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README ChangeLog NEWS TODO AUTHORS
 %attr(755,root,root) %{_bindir}/*
+%{_libdir}/bonobo/servers/*
 %{_datadir}/%{name}
 %{_desktopdir}/*
 %{_iconsdir}/hicolor/192x192/apps/yelp-icon-big.png
-%{_libdir}/bonobo/servers/*
 %{_sysconfdir}/gconf/schemas/yelp.schemas
