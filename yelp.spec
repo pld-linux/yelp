@@ -1,12 +1,12 @@
 #
 # Conditinal build:
-%bcond_with	mozilla_firefox		# build with mozilla-firefox
+%bcond_without	mozilla_firefox		# build with mozilla-firefox
 #
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.14.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.14/%{name}-%{version}.tar.bz2
