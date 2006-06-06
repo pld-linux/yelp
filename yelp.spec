@@ -5,12 +5,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.14.1
-Release:	4
+Version:	2.14.2
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	3d569f8e9372bc88c7f9fca6a94388a9
+# Source0-md5:	4294fe3b01824675bd8be9d7936dcaa7
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-m4.patch
 Patch2:		%{name}-bs.patch
@@ -21,12 +21,11 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	beagle-devel
 BuildRequires:	bzip2-devel
-BuildRequires:	glib2-devel >= 1:2.8.1
 BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	gnome-doc-utils >= 0.4.0
-BuildRequires:	gnome-vfs2-devel >= 2.14.0
+BuildRequires:	gnome-vfs2-devel >= 2.14.2
 BuildRequires:	libglade2-devel >= 1:2.5.1
-BuildRequires:	libgnomeui-devel >= 2.14.0
+BuildRequires:	libgnomeui-devel >= 2.14.1
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.21
 BuildRequires:	libxslt-devel >= 1.1.5
@@ -42,8 +41,8 @@ BuildRequires:	zlib-devel
 Requires(post,preun):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-doc-utils >= 0.4.0
-Requires:	gnome-vfs2 >= 2.14.0
-Requires:	libgnomeui >= 2.14.0
+Requires:	gnome-vfs2 >= 2.14.2
+Requires:	libgnomeui >= 2.14.1
 Requires:	scrollkeeper
 %if %{with mozilla_firefox}
 %requires_eq	mozilla-firefox
