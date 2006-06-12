@@ -1,16 +1,12 @@
-#
-# Conditinal build:
-%bcond_without	mozilla_firefox		# build with mozilla instead of mozilla-firefox
-#
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.15.2
+Version:	2.15.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.15/%{name}-%{version}.tar.bz2
-# Source0-md5:	0a6928685d289b67773eeff6ae90869b
+# Source0-md5:	29f058de3aacaf700a8ef535333474a9
 Patch0:		%{name}-desktop.patch
 Patch2:		%{name}-bs.patch
 URL:		http://www.gnome.org/
@@ -18,21 +14,18 @@ BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	ORBit2-devel >= 1:2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	beagle-devel
+BuildRequires:	beagle-devel >= 0.2.6
 BuildRequires:	bzip2-devel
+BuildRequires:	dbus-glib-devel >= 0.61
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-doc-utils >= 0.6.0
+BuildRequires:	gnome-doc-utils >= 0.7.1
 BuildRequires:	gnome-vfs2-devel >= 2.15.1
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomeui-devel >= 2.15.1
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 2.6.26
+BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	libxslt-devel >= 1.1.17
-%if %{with mozilla_firefox}
 BuildRequires:	mozilla-firefox-devel
-%else
-BuildRequires:	mozilla-devel >= 5:1.7
-%endif
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	popt-devel
 BuildRequires:	rpmbuild(macros) >= 1.197
@@ -44,11 +37,7 @@ Requires:	gnome-doc-utils >= 0.6.0
 Requires:	gnome-vfs2 >= 2.15.1
 Requires:	libgnomeui >= 2.15.1
 Requires:	scrollkeeper
-%if %{with mozilla_firefox}
 %requires_eq	mozilla-firefox
-%else
-Requires:	mozilla-embedded = %(rpm -q --qf '%{EPOCH}:%{VERSION}' --whatprovides mozilla-embedded)
-%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # can be provided by mozilla or mozilla-embedded
@@ -103,7 +92,6 @@ gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 %defattr(644,root,root,755)
 %doc README ChangeLog NEWS TODO AUTHORS
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/bonobo/servers/*
 %{_datadir}/%{name}
 %{_desktopdir}/*
 %{_iconsdir}/hicolor/*/*/yelp-icon-big.png
