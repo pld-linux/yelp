@@ -25,6 +25,7 @@ BuildRequires:	gnome-doc-utils >= 0.4.0
 BuildRequires:	gnome-vfs2-devel >= 2.14.2
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomeui-devel >= 2.14.1
+BuildRequires:	libgnomeprintui-devel >= 2.12.1
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.21
 BuildRequires:	libxslt-devel >= 1.1.5
