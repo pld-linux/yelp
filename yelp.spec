@@ -5,12 +5,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.14.2
-Release:	2
+Version:	2.14.3
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	4294fe3b01824675bd8be9d7936dcaa7
+# Source0-md5:	d3c4300c9a7d38ff2179b934ca5e2d1a
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-m4.patch
 Patch2:		%{name}-bs.patch
@@ -36,7 +36,7 @@ BuildRequires:	mozilla-devel >= 5:1.7
 %endif
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	popt-devel
-BuildRequires:	rpmbuild(macros) >= 1.197
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	zlib-devel
 Requires(post,preun):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
@@ -92,9 +92,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %gconf_schema_install yelp.schemas
+%update_icon_cache hicolor
 
 %preun
 %gconf_schema_uninstall yelp.schemas
+
+%postun
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
