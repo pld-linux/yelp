@@ -1,12 +1,17 @@
 #
 # Conditinal build:
-%bcond_without	mozilla_firefox		# build with mozilla-firefox
+%bcond_without	beagle			# build without beagle support 
+%bcond_without	mozilla_firefox		# build without mozilla-firefox
+#
+%ifarch alpha i386 sparc sparc64 
+%undefine	with_beagle
+%endif
 #
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.14.3
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.14/%{name}-%{version}.tar.bz2
@@ -19,7 +24,7 @@ BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	ORBit2-devel >= 1:2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	beagle-devel >= 0.2.7
+%{?with_beagle:BuildRequires:	beagle-devel >= 0.2.7}
 BuildRequires:	bzip2-devel
 BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	gnome-doc-utils >= 0.4.0
