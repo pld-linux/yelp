@@ -1,27 +1,27 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.15.91
-Release:	2
+Version:	2.16.0
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.15/%{name}-%{version}.tar.bz2
-# Source0-md5:	4e80d89cf67360f7f2496cf87d0c83c4
+Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.16/%{name}-%{version}.tar.bz2
+# Source0-md5:	215bd83b03c4a6e5629c4034e5063e7a
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-bs.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.14.0
-BuildRequires:	ORBit2-devel >= 1:2.14.2
+BuildRequires:	ORBit2-devel >= 1:2.14.3
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	beagle-devel >= 0.2.7
+BuildRequires:	beagle-devel >= 0.2.9
 BuildRequires:	bzip2-devel
 BuildRequires:	dbus-glib-devel >= 0.71
 BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	gnome-doc-utils >= 0.7.2
-BuildRequires:	gnome-vfs2-devel >= 2.15.91
+BuildRequires:	gnome-vfs2-devel >= 2.16.0
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.15.91
+BuildRequires:	libgnomeui-devel >= 2.16.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	libxslt-devel >= 1.1.17
@@ -30,11 +30,11 @@ BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	zlib-devel
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires(post,postun):	gtk+2 >= 2:2.10.1
+Requires(post,postun):	gtk+2 >= 2:2.10.2
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-doc-utils >= 0.7.2
-Requires:	gnome-vfs2 >= 2.15.91
-Requires:	libgnomeui >= 2.15.91
+Requires:	gnome-vfs2 >= 2.16.0
+Requires:	libgnomeui >= 2.16.0
 Requires:	scrollkeeper
 %requires_eq	mozilla-firefox
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -71,8 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/ug
+mv $RPM_BUILD_ROOT%{_datadir}/locale/nds{@NFE,}
 
-%find_lang %{name} --with-gnome --all-name
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
