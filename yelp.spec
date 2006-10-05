@@ -31,6 +31,7 @@ BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	zlib-devel
 Requires(post,preun):	GConf2 >= 2.14.0
 Requires(post,postun):	gtk+2 >= 2:2.10.5
+Requires(post,postun):	hicolor-icon-theme
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-doc-utils >= 0.8.0
 Requires:	gnome-vfs2 >= 2.16.1
