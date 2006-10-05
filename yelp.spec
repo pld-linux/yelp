@@ -70,7 +70,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/ug
 mv $RPM_BUILD_ROOT%{_datadir}/locale/nds{@NFE,}
 
 %find_lang %{name} --with-gnome
