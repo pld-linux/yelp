@@ -93,6 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc README ChangeLog NEWS TODO AUTHORS
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/*/yelp-icon-big.png
 %{_sysconfdir}/gconf/schemas/yelp.schemas
