@@ -11,7 +11,7 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.14.3
-Release:	5
+Release:	6
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.14/%{name}-%{version}.tar.bz2
@@ -112,6 +112,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_libdir}/bonobo/servers/*
 %{_datadir}/%{name}
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/192x192/apps/yelp-icon-big.png
 %{_sysconfdir}/gconf/schemas/yelp.schemas
