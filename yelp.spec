@@ -37,7 +37,7 @@ Requires:	gnome-doc-utils >= 0.8.0
 Requires:	gnome-vfs2 >= 2.16.1
 Requires:	libgnomeui >= 2.16.0
 Requires:	scrollkeeper
-%requires_eq	mozilla-firefox
+%requires_eq	mozilla-firefox-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # can be provided by mozilla or mozilla-embedded
