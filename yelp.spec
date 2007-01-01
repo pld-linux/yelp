@@ -1,7 +1,7 @@
 #
 # Conditinal build:
 %bcond_without	beagle			# build without beagle support 
-%bcond_without	mozilla_firefox		# build without mozilla-firefox
+%bcond_with	mozilla_firefox		# build without mozilla-firefox
 #
 %ifarch alpha i386 sparc sparc64 
 %undefine	with_beagle
@@ -11,7 +11,7 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.14.3
-Release:	7
+Release:	8
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.14/%{name}-%{version}.tar.bz2
@@ -38,7 +38,7 @@ BuildRequires:	libxslt-devel >= 1.1.5
 %if %{with mozilla_firefox}
 BuildRequires:	mozilla-firefox-devel
 %else
-BuildRequires:	mozilla-devel >= 5:1.7
+BuildRequires:	xulrunner-devel >= 1.8.0.4
 %endif
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	popt-devel
@@ -53,7 +53,7 @@ Requires:	scrollkeeper
 %if %{with mozilla_firefox}
 %requires_eq	mozilla-firefox
 %else
-Requires:	mozilla-embedded = %(rpm -q --qf '%{EPOCH}:%{VERSION}' --whatprovides mozilla-embedded)
+Requires:	xulrunner
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
