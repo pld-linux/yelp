@@ -53,7 +53,7 @@ Requires:	scrollkeeper
 %if %{with mozilla_firefox}
 %requires_eq	mozilla-firefox
 %else
-Requires:	xulrunner
+%requires_eq	xulrunner
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -80,7 +80,12 @@ narzêdzia.
 %{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	%if %{with mozilla_firefox}
+	--with-gecko=firefox
+	%else
+	--with-gecko=xulrunner
+	%endif
 %{__make}
 
 %install
