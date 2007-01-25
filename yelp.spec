@@ -25,7 +25,7 @@ BuildRequires:	libgnomeui-devel >= 2.16.1
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	libxslt-devel >= 1.1.17
-BuildRequires:	mozilla-firefox-devel >= 1.5.0.7
+BuildRequires:	xulrunner-devel >= 1.8.0.4
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	zlib-devel
@@ -37,7 +37,7 @@ Requires:	gnome-doc-utils >= 0.8.0
 Requires:	gnome-vfs2 >= 2.16.3
 Requires:	libgnomeui >= 2.16.1
 Requires:	scrollkeeper
-%requires_eq	mozilla-firefox-libs
+%requires_eq	xulrunner
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # can be provided by mozilla or mozilla-embedded
