@@ -1,7 +1,6 @@
 #
 # Conditinal build:
 %bcond_without	beagle			# build without beagle support 
-%bcond_with	mozilla_firefox		# build without mozilla-firefox
 #
 %ifarch alpha i386 sparc sparc64 
 %undefine	with_beagle
@@ -35,11 +34,7 @@ BuildRequires:	libgnomeprintui-devel >= 2.12.1
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.6.21
 BuildRequires:	libxslt-devel >= 1.1.5
-%if %{with mozilla_firefox}
-BuildRequires:	mozilla-firefox-devel
-%else
 BuildRequires:	xulrunner-devel >= 1.8.0.4
-%endif
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	popt-devel
 BuildRequires:	rpmbuild(macros) >= 1.311
@@ -50,11 +45,7 @@ Requires:	gnome-doc-utils >= 0.4.0
 Requires:	gnome-vfs2 >= 2.14.2
 Requires:	libgnomeui >= 2.14.1
 Requires:	scrollkeeper
-%if %{with mozilla_firefox}
-%requires_eq	mozilla-firefox
-%else
 %requires_eq	xulrunner
-%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # can be provided by mozilla or mozilla-embedded
@@ -81,11 +72,7 @@ narzêdzia.
 %{__autoconf}
 %{__automake}
 %configure \
-	%if %{with mozilla_firefox}
-	--with-gecko=firefox
-	%else
 	--with-gecko=xulrunner
-	%endif
 %{__make}
 
 %install
