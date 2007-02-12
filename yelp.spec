@@ -1,5 +1,5 @@
 Summary:	A system documentation reader from the GNOME project
-Summary(pl):	Czytnik dokumentacji z projektu GNOME
+Summary(pl.UTF-8):   Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.16.2
 Release:	1
@@ -47,10 +47,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Yelp is the GNOME help/documentation browser. It is designed to help
 you browse all the documentation on your system in one central tool.
 
-%description -l pl
-Yelp jest przegl±dark± pomocy i dokumentacji GNOME. Umo¿liwia
-przegl±danie ca³ej dokumentacji systemu za pomoc± jednego, centralnego
-narzêdzia.
+%description -l pl.UTF-8
+Yelp jest przeglÄ…darkÄ… pomocy i dokumentacji GNOME. UmoÅ¼liwia
+przeglÄ…danie caÅ‚ej dokumentacji systemu za pomocÄ… jednego, centralnego
+narzÄ™dzia.
 
 %prep
 %setup -q
