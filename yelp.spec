@@ -1,5 +1,5 @@
 Summary:	A system documentation reader from the GNOME project
-Summary(pl.UTF-8):   Czytnik dokumentacji z projektu GNOME
+Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.16.2
 Release:	1
