@@ -2,7 +2,7 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.16.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.16/%{name}-%{version}.tar.bz2
@@ -37,7 +37,7 @@ Requires:	gnome-doc-utils >= 0.8.0
 Requires:	gnome-vfs2 >= 2.16.3
 Requires:	libgnomeui >= 2.16.1
 Requires:	scrollkeeper
-%requires_eq	xulrunner
+%requires_eq_to	xulrunner xulrunner-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # can be provided by mozilla or mozilla-embedded
