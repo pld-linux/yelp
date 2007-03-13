@@ -1,41 +1,41 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.16.2
-Release:	2
+Version:	2.18.0
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	ac55332d62c1871b3de92b5c1f0befaa
+Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.18/%{name}-%{version}.tar.bz2
+# Source0-md5:	bc40ea281cdfa256c7da0d0b7fe8191b
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-bs.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.16.0
-BuildRequires:	ORBit2-devel >= 1:2.14.4
+BuildRequires:	GConf2-devel >= 2.18.0.1
+BuildRequires:	ORBit2-devel >= 1:2.14.7
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	beagle-devel >= 0.2.13
 BuildRequires:	bzip2-devel
-BuildRequires:	dbus-glib-devel >= 0.71
+BuildRequires:	dbus-glib-devel >= 0.73
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-doc-utils >= 0.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.16.3
+BuildRequires:	gnome-doc-utils >= 0.10.1
+BuildRequires:	gnome-vfs2-devel >= 2.18.0.1
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.16.1
+BuildRequires:	libgnomeui-devel >= 2.18.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.27
-BuildRequires:	libxslt-devel >= 1.1.17
+BuildRequires:	libxslt-devel >= 1.1.20
 BuildRequires:	xulrunner-devel >= 1.8.0.4
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	zlib-devel
-Requires(post,preun):	GConf2 >= 2.16.0
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,preun):	GConf2
+Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-doc-utils >= 0.8.0
-Requires:	gnome-vfs2 >= 2.16.3
-Requires:	libgnomeui >= 2.16.1
+Requires:	gnome-doc-utils >= 0.10.1
+Requires:	gnome-vfs2 >= 2.18.0.1
+Requires:	libgnomeui >= 2.18.0
 Requires:	scrollkeeper
 %requires_eq_to	xulrunner xulrunner-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
