@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.18.0
-Release:	4
+Version:	2.18.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	bc40ea281cdfa256c7da0d0b7fe8191b
+# Source0-md5:	84abbfe7e042706cbf21752957e29bf3
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-bs.patch
 URL:		http://www.gnome.org/
@@ -17,11 +17,11 @@ BuildRequires:	automake
 BuildRequires:	beagle-devel >= 0.2.13
 BuildRequires:	bzip2-devel
 BuildRequires:	dbus-glib-devel >= 0.73
-BuildRequires:	gnome-common >= 2.12.0
+BuildRequires:	gnome-common >= 2.18.0
 BuildRequires:	gnome-doc-utils >= 0.10.1
 BuildRequires:	gnome-vfs2-devel >= 2.18.0.1
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.18.0
+BuildRequires:	libgnomeui-devel >= 2.18.1
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	libxslt-devel >= 1.1.20
@@ -35,7 +35,7 @@ Requires(post,postun):	hicolor-icon-theme
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-doc-utils >= 0.10.1
 Requires:	gnome-vfs2 >= 2.18.0.1
-Requires:	libgnomeui >= 2.18.0
+Requires:	libgnomeui >= 2.18.1
 Requires:	scrollkeeper
 %requires_eq_to	xulrunner xulrunner-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
