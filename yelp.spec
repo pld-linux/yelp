@@ -2,7 +2,7 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.18.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/yelp/2.18/%{name}-%{version}.tar.bz2
@@ -42,6 +42,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # can be provided by mozilla or mozilla-embedded
 %define		_noautoreqdep	libgtkembedmoz.so libgtksuperwin.so libxpcom.so
+# we have strict deps for it
+%define		_noautoreq	libxpcom.so
 
 %description
 Yelp is the GNOME help/documentation browser. It is designed to help
