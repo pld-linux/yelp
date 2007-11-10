@@ -2,7 +2,7 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.20.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.20/%{name}-%{version}.tar.bz2
@@ -39,6 +39,8 @@ Requires:	gnome-vfs2 >= 2.20.0
 Requires:	libgnomeui >= 2.20.0
 Requires:	scrollkeeper
 %requires_eq_to	xulrunner xulrunner-devel
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # can be provided by mozilla or mozilla-embedded
@@ -60,6 +62,12 @@ narzędzia.
 %patch0 -p1
 %patch1 -p1
 
+# fix locale names
+sed -i -e s#nds\@NFE#nds# po/LINGUAS
+sed -i -e s#sr\@Latn#sr\@latin# po/LINGUAS
+mv po/nds{\@NFE,}.po
+mv po/sr\@{Latn,latin}.po
+
 %build
 %{__libtoolize}
 %{__aclocal} -I m4
@@ -73,8 +81,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-mv $RPM_BUILD_ROOT%{_datadir}/locale/nds{@NFE,}
 
 %find_lang %{name} --with-gnome
 
