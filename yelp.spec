@@ -2,7 +2,7 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.20.0
-Release:	6
+Release:	7
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.20/%{name}-%{version}.tar.bz2
@@ -74,7 +74,8 @@ mv po/sr\@{Latn,latin}.po
 %{__autoconf}
 %{__automake}
 %configure
-%{__make} -j1
+%{__make} -j1 \
+	CFLAGS="%{rpmcflags} -DI_KNOW_RARIAN_0_8_IS_UNSTABLE"
 
 %install
 rm -rf $RPM_BUILD_ROOT
