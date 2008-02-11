@@ -2,7 +2,7 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.20.0
-Release:	8
+Release:	9
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.20/%{name}-%{version}.tar.bz2
@@ -14,7 +14,7 @@ BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	ORBit2-devel >= 1:2.14.9
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	beagle-devel >= 0.2.13
+BuildRequires:	libbeagle-devel >= 0.3.0
 BuildRequires:	bzip2-devel
 BuildRequires:	dbus-glib-devel >= 0.73
 BuildRequires:	gnome-common >= 2.20.0
