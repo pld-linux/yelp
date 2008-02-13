@@ -14,21 +14,21 @@ BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	ORBit2-devel >= 1:2.14.9
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libbeagle-devel >= 0.3.0
 BuildRequires:	bzip2-devel
 BuildRequires:	dbus-glib-devel >= 0.73
 BuildRequires:	gnome-common >= 2.20.0
 BuildRequires:	gnome-doc-utils >= 0.12.0
 BuildRequires:	gnome-vfs2-devel >= 2.20.0
+BuildRequires:	libbeagle-devel >= 0.3.0
 BuildRequires:	libglade2-devel >= 1:2.6.2
 BuildRequires:	libgnomeui-devel >= 2.20.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-devel >= 1.1.22
-BuildRequires:	xulrunner-devel >= 1.8.0.4
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rarian-devel
 BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	xulrunner-devel >= 1.8.0.4
 BuildRequires:	zlib-devel
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2
