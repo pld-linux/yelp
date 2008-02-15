@@ -1,12 +1,12 @@
-diff -aurN yelp-2.13.4.orig/yelp.desktop.in.in yelp-2.13.4/yelp.desktop.in.in
---- yelp-2.13.4.orig/yelp.desktop.in.in	2006-01-22 18:52:02.000000000 +0100
-+++ yelp-2.13.4/yelp.desktop.in.in	2006-02-01 15:54:20.951476000 +0100
-@@ -7,7 +7,8 @@
+diff -urN yelp-2.21.90/yelp.desktop.in.in yelp-2.21.90.new/yelp.desktop.in.in
+--- yelp-2.21.90/yelp.desktop.in.in	2008-01-28 22:47:26.000000000 +0100
++++ yelp-2.21.90.new/yelp.desktop.in.in	2008-02-15 11:22:33.000000000 +0100
+@@ -6,7 +6,8 @@
  StartupNotify=true
  Terminal=false
  Type=Application
--Categories=GNOME;GTK;Application;Core;
-+Categories=GTK;GNOME;X-Help;
+-Categories=GNOME;GTK;Core;
++Categories=GNOME;GTK;X-Help;
 +OnlyShowIn=GNOME;
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=Yelp
