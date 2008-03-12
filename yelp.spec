@@ -1,17 +1,17 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.21.90
+Version:	2.22.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.21/%{name}-%{version}.tar.bz2
-# Source0-md5:	d6f95ed528994cde4834b52d483da66b
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.22/%{name}-%{version}.tar.bz2
+# Source0-md5:	941e67796bbc332c1db3d63771ae2590
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-bs.patch
 Patch2:		%{name}-beagle.patch
 URL:		http://live.gnome.org/Yelp
-BuildRequires:	GConf2-devel >= 2.21.90
+BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	bzip2-devel
@@ -19,12 +19,12 @@ BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.20.0
 BuildRequires:	gnome-doc-utils >= 0.12.1
-BuildRequires:	gnome-vfs2-devel >= 2.21.90
+BuildRequires:	gnome-vfs2-devel >= 2.22.0
 BuildRequires:	gtk+2-devel >= 2:2.12.8
 BuildRequires:	intltool >= 0.37.0
 BuildRequires:	libbeagle-devel >= 0.3.0
 BuildRequires:	libglade2-devel >= 1:2.6.2
-BuildRequires:	libgnomeui-devel >= 2.21.91
+BuildRequires:	libgnomeui-devel >= 2.22.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	libxslt-devel >= 1.1.22
@@ -39,8 +39,8 @@ Requires(post,postun):	hicolor-icon-theme
 Requires(post,preun):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-doc-utils >= 0.12.1
-Requires:	gnome-vfs2 >= 2.21.90
-Requires:	libgnomeui >= 2.21.91
+Requires:	gnome-vfs2 >= 2.22.0
+Requires:	libgnomeui >= 2.22.0
 Requires:	scrollkeeper
 %requires_eq_to	xulrunner xulrunner-devel
 # sr@Latn vs. sr@latin
