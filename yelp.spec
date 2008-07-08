@@ -2,7 +2,7 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	2.22.1
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.22/%{name}-%{version}.tar.bz2
@@ -10,6 +10,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.22/%{name}-%{version}.tar
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-bs.patch
 Patch2:		%{name}-beagle.patch
+Patch3:		%{name}-libxul.patch
 URL:		http://live.gnome.org/Yelp
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf
@@ -32,7 +33,7 @@ BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rarian-devel >= 0.7.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	xulrunner-devel >= 1.8.0.4
+BuildRequires:	xulrunner-devel >= 1.9-5
 BuildRequires:	zlib-devel
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
@@ -66,6 +67,7 @@ narzędzia.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 # fix locale names
 sed -i -e s#nds@NFE#nds# po/LINGUAS
