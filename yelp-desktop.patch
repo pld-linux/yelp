@@ -6,7 +6,7 @@ diff -urN yelp-2.21.90/yelp.desktop.in.in yelp-2.21.90.new/yelp.desktop.in.in
  Terminal=false
  Type=Application
 -Categories=GNOME;GTK;Core;
-+Categories=GNOME;GTK;X-Help;
++Categories=GNOME;GTK;Core;Documentation;
 +OnlyShowIn=GNOME;
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=Yelp
