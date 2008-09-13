@@ -7,8 +7,8 @@ License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.23/%{name}-%{version}.tar.bz2
 # Source0-md5:	32d4edbb5401e0745ecbdc2ac1101082
+# http://bugzilla.gnome.org/show_bug.cgi?id=552128
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-bs.patch
 Patch2:		%{name}-libxul.patch
 URL:		http://live.gnome.org/Yelp
 BuildRequires:	GConf2-devel >= 2.22.0
@@ -64,7 +64,6 @@ narzędzia.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 %patch2 -p1
 
 # fix locale names
