@@ -6,7 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	15eb2f538d970600c1e0a461f7d88b55
+# Source0-md5:	3413fd051c5ecbfe98819a8fb4ac83dd
 Patch0:		%{name}-libxul.patch
 URL:		http://live.gnome.org/Yelp
 BuildRequires:	GConf2-devel >= 2.26.0
