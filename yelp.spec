@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.26.0
-Release:	8
+Version:	2.28.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	3413fd051c5ecbfe98819a8fb4ac83dd
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.28/%{name}-%{version}.tar.bz2
+# Source0-md5:	4e68e796927198e644a57d455c16c389
 Patch0:		%{name}-libxul.patch
 URL:		http://live.gnome.org/Yelp
 BuildRequires:	GConf2-devel >= 2.26.0
@@ -16,7 +16,7 @@ BuildRequires:	bzip2-devel
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.24.0
-BuildRequires:	gnome-doc-utils >= 0.16.0
+BuildRequires:	gnome-doc-utils >= 0.17.2
 BuildRequires:	gtk+2-devel >= 2:2.16.0
 BuildRequires:	intltool >= 0.37.0
 BuildRequires:	libbeagle-devel >= 0.3.0
@@ -35,7 +35,7 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,preun):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-doc-utils >= 0.16.0
+Requires:	gnome-doc-utils >= 0.17.2
 Requires:	libgnomeui >= 2.24.0
 Requires:	scrollkeeper
 %requires_eq_to	xulrunner xulrunner-devel
@@ -62,8 +62,6 @@ narzędzia.
 %patch0 -p1
 
 # fix locale names
-sed -i -e s#nds@NFE#nds# po/LINGUAS
-mv po/nds{@NFE,}.po
 # drop la locale
 sed -i -e s#^la## po/LINGUAS
 rm -f po/la.po
