@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.28.0
-Release:	3
+Version:	2.28.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	4e68e796927198e644a57d455c16c389
+# Source0-md5:	faf7eac7abf4eded189566f9ffafc188
 Patch0:		%{name}-libxul.patch
 URL:		http://live.gnome.org/Yelp
 BuildRequires:	GConf2-devel >= 2.26.0
@@ -62,8 +62,10 @@ narzędzia.
 %patch0 -p1
 
 # fix locale names
-# drop la locale
+# drop en@shaw and la locale
+sed -i -e s#en@shaw## po/LINGUAS
 sed -i -e s#^la## po/LINGUAS
+rm -f po/en@shaw.po
 rm -f po/la.po
 
 %build
