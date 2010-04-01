@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	2.28.1
-Release:	7
+Version:	2.30.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	faf7eac7abf4eded189566f9ffafc188
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/2.30/%{name}-%{version}.tar.bz2
+# Source0-md5:	9a5674664568844616bcf169dce7e1a6
 Patch0:		%{name}-libxul.patch
 URL:		http://live.gnome.org/Yelp
 BuildRequires:	GConf2-devel >= 2.26.0
@@ -16,12 +16,10 @@ BuildRequires:	bzip2-devel
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.24.0
-BuildRequires:	gnome-doc-utils >= 0.17.2
-BuildRequires:	gtk+2-devel >= 2:2.16.0
+BuildRequires:	gnome-doc-utils >= 0.20.0
+BuildRequires:	gtk+2-devel >= 2:2.18.0
 BuildRequires:	intltool >= 0.37.0
 BuildRequires:	libbeagle-devel >= 0.3.0
-BuildRequires:	libglade2-devel >= 1:2.6.2
-BuildRequires:	libgnomeui-devel >= 2.24.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	libxslt-devel >= 1.1.22
@@ -35,8 +33,7 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,preun):	GConf2
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-doc-utils >= 0.17.2
-Requires:	libgnomeui >= 2.24.0
+Requires:	gnome-doc-utils >= 0.20.0
 Requires:	scrollkeeper
 %requires_eq_to	xulrunner xulrunner-devel
 # sr@Latn vs. sr@latin
@@ -62,11 +59,9 @@ narzędzia.
 %patch0 -p1
 
 # fix locale names
-# drop en@shaw and la locale
+# drop en@shaw locale
 sed -i -e s#en@shaw## po/LINGUAS
-sed -i -e s#^la## po/LINGUAS
 rm -f po/en@shaw.po
-rm -f po/la.po
 
 %build
 %{__intltoolize}
