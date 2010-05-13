@@ -27,6 +27,7 @@ BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rarian-devel >= 0.7.0
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	startup-notification-devel >= 0.8
+BuildRequires:	xorg-lib-libSM-devel
 BuildRequires:	xulrunner-devel >= 1.9-5
 BuildRequires:	zlib-devel
 Requires(post,postun):	gtk+2
