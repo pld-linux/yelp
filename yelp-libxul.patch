@@ -1,7 +1,7 @@
-diff -urN yelp-2.23.2/m4/gecko.m4 yelp-2.23.2.new/m4/gecko.m4
---- yelp-2.23.2/m4/gecko.m4	2008-08-21 22:05:48.000000000 +0200
-+++ yelp-2.23.2.new/m4/gecko.m4	2008-08-22 01:32:57.000000000 +0200
-@@ -116,7 +116,7 @@
+diff -urN yelp-2.30.1/m4/gecko.m4 yelp-2.30.1.new//m4/gecko.m4
+--- yelp-2.30.1/m4/gecko.m4	2010-03-19 15:11:01.000000000 +0100
++++ yelp-2.30.1.new//m4/gecko.m4	2010-07-02 00:51:40.195866400 +0200
+@@ -119,7 +119,7 @@
  	_GECKO_PREFIX="`$PKG_CONFIG --variable=prefix ${gecko_cv_gecko}-xpcom`"
  	_GECKO_NSPR=no # XXX asac: this is currently a blind guess and should be a AC test
  else
@@ -10,10 +10,10 @@ diff -urN yelp-2.23.2/m4/gecko.m4 yelp-2.23.2.new/m4/gecko.m4
  	_GECKO_CFLAGS="`$PKG_CONFIG --cflags ${gecko_cv_gecko}` `$PKG_CONFIG --cflags ${gecko_cv_gecko}-unstable`"
  	_GECKO_LIBDIR="`$PKG_CONFIG --variable=sdkdir ${gecko_cv_gecko}`/bin"
  	_GECKO_HOME=$with_gecko_home
-diff -urN yelp-2.23.2/src/Makefile.am yelp-2.23.2.new/src/Makefile.am
---- yelp-2.23.2/src/Makefile.am	2008-08-21 22:05:49.000000000 +0200
-+++ yelp-2.23.2.new/src/Makefile.am	2008-08-22 01:33:10.000000000 +0200
-@@ -60,7 +60,8 @@
+diff -urN yelp-2.30.1/src/Makefile.am yelp-2.30.1.new//src/Makefile.am
+--- yelp-2.30.1/src/Makefile.am	2010-03-19 15:11:01.000000000 +0100
++++ yelp-2.30.1.new//src/Makefile.am	2010-07-02 00:52:09.092511415 +0200
+@@ -61,7 +61,8 @@
  	uriloader	\
  	webbrwsr	\
  	webshell	\
@@ -23,3 +23,24 @@ diff -urN yelp-2.23.2/src/Makefile.am yelp-2.23.2.new/src/Makefile.am
  
  yelp_CPPFLAGS =									\
  	-I$(top_srcdir)								\
+@@ -84,16 +85,16 @@
+ 	$(AM_CXXFLAGS)
+ 
+ yelp_LDADD =				\
++	$(MOZILLA_COMPONENT_LIBS)	\
++	$(MOZILLA_EXTRA_LIBS)		\
++	$(MOZILLA_GLUE_LIBS)		\
+ 	$(YELP_LIBS)			\
+ 	$(YELP_SEARCH_LIBS)		\
+ 	$(POPT_LIBS)			\
+ 	$(Z_LIBS)			\
+ 	$(BZ_LIBS)			\
+ 	$(LZMADEC_LIBS)			\
+-	$(X_LIBS)			\
+-	$(MOZILLA_COMPONENT_LIBS)	\
+-	$(MOZILLA_EXTRA_LIBS)		\
+-	$(MOZILLA_GLUE_LIBS)
++	$(X_LIBS)
+ 
+ yelp_LDFLAGS = $(AM_LDFLAGS)
+ 
