@@ -31,8 +31,13 @@ Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	glib2 >= 1:2.26.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	%{name}-libs = %{version}-%{release}
+Requires:	docbook-dtd412-xml
+Requires:	docbook-dtd42-xml
+Requires:	docbook-dtd43-xml
+Requires:	docbook-dtd44-xml
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-doc-utils >= 0.20.0
+Requires:	gnome-icon-theme-symbolic
 Requires:	hicolor-icon-theme
 Requires:	yelp-xsl >= 2.91.91
 # sr@Latn vs. sr@latin
