@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.0.0
+Version:	3.0.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	7549f98025fcbbe0bcd25d9a1ae26520
+# Source0-md5:	21d03731080acdb039dddc1937396cbb
 URL:		http://projects.gnome.org/yelp/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
