@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.0.3
+Version:	3.0.4
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	199371c6ec1d230bf8500c2c3208b7d5
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.0/%{name}-%{version}.tar.xz
+# Source0-md5:	ccca1c2cafe88f49685d8077b02fb395
 URL:		http://projects.gnome.org/yelp/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -26,6 +26,8 @@ BuildRequires:	lzma-devel
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	sqlite3-devel
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 BuildRequires:	yelp-xsl >= 3.0.1
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	glib2 >= 1:2.26.0
