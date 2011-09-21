@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.0.4
+Version:	3.1.4
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.0/%{name}-%{version}.tar.xz
-# Source0-md5:	ccca1c2cafe88f49685d8077b02fb395
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.1/%{name}-%{version}.tar.xz
+# Source0-md5:	d6bc46fcbc1a203339ad58a6ddecaac5
 URL:		http://projects.gnome.org/yelp/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -22,16 +22,15 @@ BuildRequires:	intltool >= 0.41.0
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	libxslt-devel >= 1.1.22
-BuildRequires:	lzma-devel
+BuildRequires:	lzma-devel >= 4.9
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	sqlite3-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-BuildRequires:	yelp-xsl >= 3.0.1
+BuildRequires:	yelp-xsl >= 3.1.2
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	glib2 >= 1:2.26.0
-Requires(post,postun):	gtk-update-icon-cache
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	docbook-dtd412-xml
 Requires:	docbook-dtd42-xml
@@ -40,8 +39,7 @@ Requires:	docbook-dtd44-xml
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-doc-utils >= 0.20.0
 Requires:	gnome-icon-theme-symbolic
-Requires:	hicolor-icon-theme
-Requires:	yelp-xsl >= 3.0.1
+Requires:	yelp-xsl >= 3.1.2
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -110,7 +108,7 @@ Dokumentacja API biblioteki yelp.
 	--disable-silent-rules \
 	--disable-schemas-compile \
 	--disable-static \
-	--enable-gtk-doc \
+	--disable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
 
@@ -128,12 +126,10 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%update_icon_cache hicolor
 %update_desktop_database_post
 %glib_compile_schemas
 
 %postun
-%update_icon_cache hicolor
 %update_desktop_database_postun
 %glib_compile_schemas
 
@@ -148,7 +144,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.yelp.gschema.xml
 %{_datadir}/yelp
 %{_desktopdir}/yelp.desktop
-%{_iconsdir}/hicolor/*/*/yelp-icon-big.png
 
 %files libs
 %defattr(644,root,root,755)
