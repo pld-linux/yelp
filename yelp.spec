@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.2.1
+Version:	3.4.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.2/%{name}-%{version}.tar.xz
-# Source0-md5:	0c58fefce818ed3f2c2cdcf0d636b892
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.4/%{name}-%{version}.tar.xz
+# Source0-md5:	be3612ed179609de2a43e302d5b0e195
 URL:		http://projects.gnome.org/yelp/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -19,6 +19,7 @@ BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.13
 BuildRequires:	gtk-webkit3-devel >= 1.3.2
 BuildRequires:	intltool >= 0.41.0
+BuildRequires:	itstool
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	libxslt-devel >= 1.1.22
@@ -28,7 +29,7 @@ BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	sqlite3-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-BuildRequires:	yelp-xsl >= 3.2.1
+BuildRequires:	yelp-xsl >= 3.4.0
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	%{name}-libs = %{version}-%{release}
@@ -39,7 +40,7 @@ Requires:	docbook-dtd44-xml
 Requires:	docbook-style-xsl >= 1.55.0
 Requires:	gnome-doc-utils >= 0.20.0
 Requires:	gnome-icon-theme-symbolic
-Requires:	yelp-xsl >= 3.2.0
+Requires:	yelp-xsl >= 3.4.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -143,6 +144,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/yelp
 %{_datadir}/glib-2.0/schemas/org.gnome.yelp.gschema.xml
 %{_datadir}/yelp
+%{_datadir}/yelp-xsl/xslt/common/domains/yelp.xml
 %{_desktopdir}/yelp.desktop
 
 %files libs
