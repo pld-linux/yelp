@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.10.2
+Version:	3.12.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.10/%{name}-%{version}.tar.xz
-# Source0-md5:	26b380fad5e8e0414db6ebc384493505
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.12/%{name}-%{version}.tar.xz
+# Source0-md5:	02f0383b02960766ea46059b9a02cf85
 URL:		http://projects.gnome.org/yelp/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -15,7 +15,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.20.0
-BuildRequires:	gtk+3-devel >= 3.0.0
+BuildRequires:	gtk+3-devel >= 3.8.0
 BuildRequires:	gtk-doc >= 1.13
 BuildRequires:	gtk-webkit3-devel >= 1.4.0
 BuildRequires:	intltool >= 0.41.0
@@ -72,7 +72,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki yelp
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.28.0
-Requires:	gtk+3-devel >= 3.0.0
+Requires:	gtk+3-devel >= 3.8.0
 Requires:	gtk-webkit3-devel >= 1.4.0
 Requires:	libxml2-devel >= 1:2.6.31
 Requires:	libxslt-devel >= 1.1.22
