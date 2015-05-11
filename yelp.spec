@@ -1,18 +1,18 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.14.1
-Release:	2
+Version:	3.16.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.14/%{name}-%{version}.tar.xz
-# Source0-md5:	1e2c282183761904c507c7efa6be7037
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.16/%{name}-%{version}.tar.xz
+# Source0-md5:	528302ce066f3798d40e9c5e2fcedfc4
 URL:		http://projects.gnome.org/yelp/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	bzip2-devel
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.28.0
+BuildRequires:	glib2-devel >= 1:2.38.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.20.0
 BuildRequires:	gtk+3-devel >= 3.13.3
@@ -71,7 +71,7 @@ Summary:	Header files for yelp library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki yelp
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.28.0
+Requires:	glib2-devel >= 1:2.38.0
 Requires:	gtk+3-devel >= 3.13.3
 Requires:	gtk-webkit3-devel >= 1.4.0
 Requires:	libxml2-devel >= 1:2.6.31
