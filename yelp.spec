@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.16.1
+Version:	3.18.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.16/%{name}-%{version}.tar.xz
-# Source0-md5:	528302ce066f3798d40e9c5e2fcedfc4
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.18/%{name}-%{version}.tar.xz
+# Source0-md5:	d23b26c4aea3586091639ccb07082761
 URL:		http://projects.gnome.org/yelp/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -14,10 +14,9 @@ BuildRequires:	bzip2-devel
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.38.0
 BuildRequires:	gnome-common >= 2.24.0
-BuildRequires:	gnome-doc-utils >= 0.20.0
 BuildRequires:	gtk+3-devel >= 3.13.3
 BuildRequires:	gtk-doc >= 1.13
-BuildRequires:	gtk-webkit3-devel >= 1.4.0
+BuildRequires:	gtk-webkit4-devel >= 2.8.0
 BuildRequires:	intltool >= 0.41.0
 BuildRequires:	itstool >= 1.2.0
 BuildRequires:	libtool >= 2:2.2.6
@@ -38,7 +37,6 @@ Requires:	docbook-dtd42-xml
 Requires:	docbook-dtd43-xml
 Requires:	docbook-dtd44-xml
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-doc-utils >= 0.20.0
 Requires:	gnome-icon-theme-symbolic
 Requires:	yelp-xsl >= 3.12.0
 # sr@Latn vs. sr@latin
@@ -73,7 +71,7 @@ Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.38.0
 Requires:	gtk+3-devel >= 3.13.3
-Requires:	gtk-webkit3-devel >= 1.4.0
+Requires:	gtk-webkit4-devel >= 2.8.0
 Requires:	libxml2-devel >= 1:2.6.31
 Requires:	libxslt-devel >= 1.1.22
 
@@ -123,6 +121,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/yelp/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/yelp/web-extensions/*.la
 
 %find_lang %{name}
 
@@ -154,6 +154,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libyelp.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libyelp.so.0
+%dir %{_libdir}/yelp
+%attr(755,root,root) %{_libdir}/yelp/libyelpcommon.so
+%dir %{_libdir}/yelp/web-extensions
+%attr(755,root,root) %{_libdir}/yelp/web-extensions/libyelpwebextension.so
 
 %files devel
 %defattr(644,root,root,755)
