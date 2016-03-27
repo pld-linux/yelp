@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.18.1
+Version:	3.20.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	07068dc20a7d6cf1fb37f82669ee4590
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.20/%{name}-%{version}.tar.xz
+# Source0-md5:	908490f2e5d6cd9b4a34a24a0d916ed5
 URL:		http://projects.gnome.org/yelp/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -121,7 +121,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/yelp/*.la
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/yelp/web-extensions/*.la
 
 %find_lang %{name}
@@ -154,8 +153,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libyelp.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libyelp.so.0
-%dir %{_libdir}/yelp
-%attr(755,root,root) %{_libdir}/yelp/libyelpcommon.so
 %dir %{_libdir}/yelp/web-extensions
 %attr(755,root,root) %{_libdir}/yelp/web-extensions/libyelpwebextension.so
 
