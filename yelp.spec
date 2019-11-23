@@ -1,23 +1,22 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.28.0
+Version:	3.34.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.28/%{name}-%{version}.tar.xz
-# Source0-md5:	5a4a4682d31e165a1c03e451c215f623
-URL:		http://projects.gnome.org/yelp/
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	776e29bd16424c8712cbf340cfe6429b
+URL:		https://wiki.gnome.org/Apps/Yelp
+BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11.2
 BuildRequires:	bzip2-devel
-BuildRequires:	gettext-tools
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.38.0
-BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gtk+3-devel >= 3.13.3
 BuildRequires:	gtk-doc >= 1.13
 BuildRequires:	gtk-webkit4-devel >= 2.20.0
-BuildRequires:	intltool >= 0.41.0
 BuildRequires:	itstool >= 1.2.0
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	libxml2-devel >= 1:2.6.31
@@ -25,12 +24,13 @@ BuildRequires:	libxslt-devel >= 1.1.22
 BuildRequires:	lzma-devel >= 4.9
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rpmbuild(macros) >= 1.601
-BuildRequires:	sqlite3-devel
+BuildRequires:	sqlite3-devel >= 3
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+BuildRequires:	xz-devel >= 1:4.9
 BuildRequires:	yelp-xsl >= 3.28.0
 Requires(post,postun):	desktop-file-utils
-Requires(post,postun):	glib2 >= 1:2.28.0
+Requires(post,postun):	glib2 >= 1:2.38.0
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	docbook-dtd412-xml
 Requires:	docbook-dtd42-xml
@@ -100,7 +100,6 @@ Dokumentacja API biblioteki yelp.
 %setup -q
 
 %build
-%{__intltoolize}
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
@@ -141,13 +140,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc README ChangeLog NEWS TODO AUTHORS
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/gnome-help
 %attr(755,root,root) %{_bindir}/yelp
 %{_datadir}/glib-2.0/schemas/org.gnome.yelp.gschema.xml
+%{_datadir}/metainfo/yelp.appdata.xml
 %{_datadir}/yelp
 %{_datadir}/yelp-xsl/xslt/common/domains/yelp.xml
 %{_desktopdir}/yelp.desktop
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Yelp.svg
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.Yelp-symbolic.svg
 
 %files libs
 %defattr(644,root,root,755)
