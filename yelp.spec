@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.34.0
+Version:	3.36.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	776e29bd16424c8712cbf340cfe6429b
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	32f879293f79b4042edc46aa13d82c71
 URL:		https://wiki.gnome.org/Apps/Yelp
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
@@ -37,10 +37,7 @@ Requires:	docbook-dtd42-xml
 Requires:	docbook-dtd43-xml
 Requires:	docbook-dtd44-xml
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	gnome-icon-theme-symbolic
 Requires:	yelp-xsl >= 3.28.0
-# sr@Latn vs. sr@latin
-Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
