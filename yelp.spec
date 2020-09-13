@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.36.0
+Version:	3.38.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	32f879293f79b4042edc46aa13d82c71
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.38/%{name}-%{version}.tar.xz
+# Source0-md5:	d0fc40842f4575cddea4cfd3a022bd6b
 URL:		https://wiki.gnome.org/Apps/Yelp
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
@@ -21,7 +21,6 @@ BuildRequires:	itstool >= 1.2.0
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	libxslt-devel >= 1.1.22
-BuildRequires:	lzma-devel >= 4.9
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	sqlite3-devel >= 3
@@ -37,7 +36,7 @@ Requires:	docbook-dtd42-xml
 Requires:	docbook-dtd43-xml
 Requires:	docbook-dtd44-xml
 Requires:	docbook-style-xsl >= 1.55.0
-Requires:	yelp-xsl >= 3.28.0
+Requires:	yelp-xsl >= 3.38.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -137,7 +136,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODO
+%doc AUTHORS NEWS README TODO
 %attr(755,root,root) %{_bindir}/gnome-help
 %attr(755,root,root) %{_bindir}/yelp
 %{_datadir}/glib-2.0/schemas/org.gnome.yelp.gschema.xml
