@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.38.1
+Version:	3.38.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp/3.38/%{name}-%{version}.tar.xz
-# Source0-md5:	e1bf7d21dd2b27f7b40b15e25fdf7a89
+Source0:	https://download.gnome.org/sources/yelp/3.38/%{name}-%{version}.tar.xz
+# Source0-md5:	e36148a18c7e7203d69c9eab616cc096
 URL:		https://wiki.gnome.org/Apps/Yelp
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
@@ -22,7 +22,7 @@ BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	libxslt-devel >= 1.1.22
 BuildRequires:	pkgconfig >= 1:0.15.0
-BuildRequires:	rpmbuild(macros) >= 1.601
+BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	sqlite3-devel >= 3
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -82,9 +82,7 @@ Summary:	yelp library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki yelp
 Group:		Documentation
 Requires:	gtk-doc-common
-%if "%{_rpmversion}" >= "5"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description apidocs
 yelp library API documentation.
