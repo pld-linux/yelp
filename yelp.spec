@@ -82,7 +82,7 @@ Summary:	yelp library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki yelp
 Group:		Documentation
 Requires:	gtk-doc-common
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description apidocs
 yelp library API documentation.
