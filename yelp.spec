@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	3.38.3
+Version:	40.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/yelp/3.38/%{name}-%{version}.tar.xz
-# Source0-md5:	33c319da0f332b535758a5d7b7a138ad
+Source0:	https://download.gnome.org/sources/yelp/40/%{name}-%{version}.tar.xz
+# Source0-md5:	d1fdb55c624a419877c2a2abfc8479a1
 URL:		https://wiki.gnome.org/Apps/Yelp
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
@@ -22,12 +22,13 @@ BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	libxslt-devel >= 1.1.22
 BuildRequires:	pkgconfig >= 1:0.15.0
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	sqlite3-devel >= 3
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	xz-devel >= 1:4.9
-BuildRequires:	yelp-xsl >= 3.28.0
+BuildRequires:	yelp-xsl >= 40.0
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	glib2 >= 1:2.38.0
 Requires:	%{name}-libs = %{version}-%{release}
@@ -35,8 +36,9 @@ Requires:	docbook-dtd412-xml
 Requires:	docbook-dtd42-xml
 Requires:	docbook-dtd43-xml
 Requires:	docbook-dtd44-xml
-Requires:	docbook-style-xsl >= 1.55.0
-Requires:	yelp-xsl >= 3.38.0
+Requires:	docbook-dtd45-xml
+Requires:	docbook-style-xsl-nons >= 1.55.0
+Requires:	yelp-xsl >= 40.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
