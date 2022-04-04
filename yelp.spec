@@ -1,12 +1,12 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	41.2
+Version:	42.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/yelp/41/%{name}-%{version}.tar.xz
-# Source0-md5:	0e9ae34e19519e81213fa7ce8115a948
+Source0:	https://download.gnome.org/sources/yelp/42/%{name}-%{version}.tar.xz
+# Source0-md5:	6dc39a17c910e87e7a240fb6a8d9b5bf
 URL:		https://wiki.gnome.org/Apps/Yelp
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
@@ -15,10 +15,11 @@ BuildRequires:	bzip2-devel
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.67.4
 BuildRequires:	gtk+3-devel >= 3.13.3
-BuildRequires:	gtk-doc >= 1.13
+BuildRequires:	gtk-doc-automake >= 1.13
 # defaults to -4.1 (soup3)
 BuildRequires:	gtk-webkit4-devel >= 2.20.0
 BuildRequires:	itstool >= 1.2.0
+BuildRequires:	libhandy1-devel >= 1.5.0
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	libxslt-devel >= 1.1.22
@@ -59,8 +60,10 @@ Group:		Libraries
 Requires:	glib2 >= 1:2.67.4
 Requires:	gtk+3 >= 3.13.3
 Requires:	gtk-webkit4 >= 2.20.0
+Requires:	libhandy1 >= 1.5.0
 Requires:	libxml2 >= 1:2.6.31
 Requires:	libxslt >= 1.1.22
+Obsoletes:	yelp-apidocs < 42
 
 %description libs
 yelp library.
@@ -84,19 +87,6 @@ Header files for yelp library.
 
 %description devel -l pl.UTF-8
 Pliki nagłówkowe biblioteki yelp.
-
-%package apidocs
-Summary:	yelp library API documentation
-Summary(pl.UTF-8):	Dokumentacja API biblioteki yelp
-Group:		Documentation
-Requires:	gtk-doc-common
-BuildArch:	noarch
-
-%description apidocs
-yelp library API documentation.
-
-%description apidocs -l pl.UTF-8
-Dokumentacja API biblioteki yelp.
 
 %prep
 %setup -q
@@ -138,8 +128,8 @@ rm -rf $RPM_BUILD_ROOT
 %update_desktop_database_postun
 %glib_compile_schemas
 
-%post libs -p /sbin/ldconfig
-%postun libs -p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -166,7 +156,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libyelp.so
 %{_includedir}/libyelp
-
-%files apidocs
-%defattr(644,root,root,755)
-%{_gtkdocdir}/libyelp
