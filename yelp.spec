@@ -1,36 +1,33 @@
 Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
-Version:	42.2
+Version:	42.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/yelp/42/%{name}-%{version}.tar.xz
-# Source0-md5:	3792122c4ab90725716cd88e9274f0f6
+# Source0-md5:	55f5edc7e1d52797a8fba23540fa72c1
 URL:		https://wiki.gnome.org/Apps/Yelp
-BuildRequires:	appstream-glib-devel
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11.2
 BuildRequires:	bzip2-devel
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.67.4
 BuildRequires:	gtk+3-devel >= 3.13.3
 BuildRequires:	gtk-doc-automake >= 1.13
-# defaults to -4.1 (soup3)
-BuildRequires:	gtk-webkit4-devel >= 2.20.0
+BuildRequires:	gtk-webkit4.1-devel >= 2.36.0
 BuildRequires:	itstool >= 1.2.0
 BuildRequires:	libhandy1-devel >= 1.5.0
-BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	libxslt-devel >= 1.1.22
+BuildRequires:	meson >= 1.3
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.15.0
 BuildRequires:	rpm-build >= 4.6
-BuildRequires:	rpmbuild(macros) >= 1.752
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	sqlite3-devel >= 3
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	xz-devel >= 1:4.9
-BuildRequires:	yelp-xsl >= 41.0
+BuildRequires:	yelp-xsl >= 42.3
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	glib2 >= 1:2.67.4
 Requires:	%{name}-libs = %{version}-%{release}
@@ -40,7 +37,7 @@ Requires:	docbook-dtd43-xml
 Requires:	docbook-dtd44-xml
 Requires:	docbook-dtd45-xml
 Requires:	docbook-style-xsl-nons >= 1.55.0
-Requires:	yelp-xsl >= 41.0
+Requires:	yelp-xsl >= 42.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -59,7 +56,6 @@ Summary(pl.UTF-8):	Biblioteka yelp
 Group:		Libraries
 Requires:	glib2 >= 1:2.67.4
 Requires:	gtk+3 >= 3.13.3
-Requires:	gtk-webkit4 >= 2.20.0
 Requires:	libhandy1 >= 1.5.0
 Requires:	libxml2 >= 1:2.6.31
 Requires:	libxslt >= 1.1.22
@@ -78,7 +74,7 @@ Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.67.4
 Requires:	gtk+3-devel >= 3.13.3
-Requires:	gtk-webkit4-devel >= 2.20.0
+Requires:	gtk-webkit4.1-devel >= 2.36.0
 Requires:	libxml2-devel >= 1:2.6.31
 Requires:	libxslt-devel >= 1.1.22
 
@@ -92,28 +88,17 @@ Pliki nagłówkowe biblioteki yelp.
 %setup -q
 
 %build
-%{__libtoolize}
-%{__aclocal} -I m4
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--disable-silent-rules \
-	--disable-schemas-compile \
-	--disable-static \
-	--disable-gtk-doc \
-	--with-html-dir=%{_gtkdocdir} \
-	--with-webkit2gtk-4-0
-%{__make}
+%meson \
+	--default-library=shared \
+	-Dbzip2=enabled \
+	-Dlzma=enabled
+
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/yelp/web-extensions/*.la
+%meson_install
 
 %find_lang %{name}
 
