@@ -2,7 +2,7 @@ Summary:	A system documentation reader from the GNOME project
 Summary(pl.UTF-8):	Czytnik dokumentacji z projektu GNOME
 Name:		yelp
 Version:	42.3
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/yelp/42/%{name}-%{version}.tar.xz
@@ -99,6 +99,9 @@ Pliki nagłówkowe biblioteki yelp.
 rm -rf $RPM_BUILD_ROOT
 
 %meson_install
+
+# not supported by glibc (as of 2.41)
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
 
 %find_lang %{name}
 
